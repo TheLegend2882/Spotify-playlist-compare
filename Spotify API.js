@@ -1,13 +1,9 @@
 //javascript code to run html app
 
 
-async function get_token(authOptions) {
-    const res = await fetch("https://accounts.spotify.com/api/token", authOptions);
-    const data = await res.json();
-    return data.access_token;
-}
 
 
+// side function without Oauth login -> cannot view personal playlists
 async function client_credientials() {
 
     const CLIENT_ID = "a8ca54f3da924bcc8bd98dc113959823";
@@ -27,10 +23,11 @@ async function client_credientials() {
         }),
     };
 
+    const res = await fetch("https://accounts.spotify.com/api/token", authOptions);
+    const data = await res.json();
 
-    const token = await get_token(authOptions);
+    const token = data.access_token;
     console.log('access token',token)
-
 }
 // client_credientials()
 
@@ -223,7 +220,7 @@ async function display_playlist(num) {
 
 }
 
-
+// for next use after comparison
 function clear_playlists() {
     const playlists = document.querySelectorAll('.tracks, .playlistinfo, .wrapper') //clears 3x info and 3x lists + venn
     playlists.forEach(playlist => {
@@ -238,7 +235,7 @@ const REDIRECT_URI = "http://127.0.0.1:5500/compare.html"
 const scope = "playlist-read-private playlist-read-collaborative user-top-read"
 
 
-//redirect to login
+//redirects to login
 if (document.getElementById("index")) {
     localStorage.clear();
     auth_login();
@@ -248,7 +245,7 @@ if (document.getElementById("index")) {
 if (document.getElementById("compare")) {
     (async () => {
 
-        if (localStorage.getItem('access_token') == null) {
+        if (localStorage.getItem('access_token') == null) { //upon reload, code already exchanged: skip
             await get_access_token();
         }
         const access_token = localStorage.getItem('access_token');
@@ -290,7 +287,7 @@ if (document.getElementById("compare")) {
             }
 
 
-            else if (!compared) { //no reaction if compared
+            else if (!compared) { //no reaction if already compared
                     console.log("starting compare")
                     document.getElementById("compareinfo").innerHTML = "<div> Repeated Tracks </div>"
                     const dupelist = document.getElementById('duplicatetracks')
@@ -319,13 +316,13 @@ if (document.getElementById("compare")) {
                     compared=true;
                     console.log("setting compared to true")
 
+                    //venn diagram stats
                     document.querySelector(".wrapper").style.visibility = 'visible'
                     document.querySelector(".left-label").innerHTML = `${list1length - duplicates} / ${list1length} <br> Unique tracks <br> ${Math.round((list1length - duplicates)*100/list1length)}%`
                     document.querySelector(".right-label").innerHTML = `${list2length - duplicates} / ${list2length} <br> Unique tracks <br> ${Math.round((list2length - duplicates)*100/list2length)}%`
                     document.querySelector(".overlap-label").innerHTML = `${duplicates}<br>Overlapping tracks`
                 }
         });
-
 
 
     })();
