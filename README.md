@@ -12,3 +12,5 @@ You must login before being able to search playlists
 
 Image:
 <img width="2559" height="1326" alt="image" src="https://github.com/user-attachments/assets/cfb850b6-d934-46c8-b02e-b0e5a1adaf57" />
+
+https://developer.spotify.com/dashboard
