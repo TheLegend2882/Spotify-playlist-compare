@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>COMPARE HERE</title>
+    <link rel='stylesheet' href="style.css"></link>
+</head>
+
+<body>
+
+    <h1>COMPARE HERE</h1>
+    <div></div>
+
+    <table id="url-entry">
+        <tr> 
+            <th> 
+                <form id='playlist1'>
+                    <label for="URL1">Playlist 1 URL:</label> <br>
+                    <input type="text" id="URL1" placeholder="https://open.spotify.com/playlist/" required> <br><br>                        
+                    <button type="submit">Search playlist</button>
+                </form>
+            </th>
+            <th>                                      
+                    <button id="compare">Compare Playlists</button>
+
+            </th>
+
+            <th> 
+                <form id = 'playlist2'>
+                    <div for="URL2">Playlist 2 URL:</div> <br>
+                    <input type="text" id="URL2" placeholder="https://open.spotify.com/playlist/" required> <br><br>                        
+                    <button type="submit">Search playlist</button>
+                </form>
+            </th>
+        </tr>
+
+        <tr>
+            <td> <div id="playlist1info" class="playlistinfo"></div>
+            </td>
+
+            <td> <div id="compareinfo" class="playlistinfo"></div>
+            </td>
+
+            <td> <div id="playlist2info" class="playlistinfo"></div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td> 
+                <ul class="tracks" id="playlist1tracks">
+                    
+                </ul>
+            </td>
+
+            <td>
+                <div class="wrapper">
+                    <div class="venn">
+                        <div class="circle left"></div>
+                        <div class="circle right"></div>
+
+                        <div class="label left-label">Unique Tracks:<br> x/y</div>
+                        <div class="label right-label">Unique Tracks:<br> x/y</div>
+                        <div class="label overlap-label">Overlapping:<br>x</div>
+                    </div>
+                    </div>
+
+                <ul class="tracks" id="duplicatetracks">
+                    
+                </ul>
+            </td>
+
+            <td>
+                <ul class="tracks" id="playlist2tracks">
+                    
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+<script src="spotify API.js"></script>
+</body>
+</html>

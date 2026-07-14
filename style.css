@@ -1,0 +1,203 @@
+body {
+    background-color: whitesmoke;
+}
+
+h1 {
+    color: navy;
+}
+
+
+#url-entry {
+    margin: 0 auto;
+}
+
+.playlistinfo {
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background-color: lightgray;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    font-weight: bold;
+    text-align: center;
+    visibility: hidden;
+}
+
+td {
+    vertical-align: top;
+}
+
+.tracks {
+    list-style: none;
+    padding-left: 0;
+    height: 72dvh;
+    overflow-y: auto;
+    width: 30vw;
+}
+
+.tracks li {
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+#duplicatetracks {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-top: 0px;
+    border-bottom: 0px;
+    visibility: hidden;
+    height: 44dvh;
+}
+
+#compareinfo {
+    margin-top: 5px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 5px;
+}
+
+.item {
+    display: flex;
+    align-items: center; /* vertical alignment */
+    gap: 10px;
+
+}
+
+.item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+
+.line1 {
+    font-weight: bold;
+    padding-bottom: 3px;
+    
+} 
+
+.line2 {
+    font-size: 0.9em;
+    color: gray;
+}
+
+#compare {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    margin: 20px;
+
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* hover effect */
+#compare:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* click (active) effect */
+#compare:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* focus outline (accessibility) */
+#compare:focus {
+    outline: 2px solid #4facfe;
+    outline-offset: 2px;
+}
+
+/* center on page */
+.wrapper {
+    width: 30vw;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0px;
+    visibility: hidden;
+}
+
+/* diagram container */
+.venn {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 7 / 3;      /* keeps shape consistent */
+}
+
+/* circles */
+.circle {
+    position: absolute;
+    width: 70%;               /* relative to venn width */
+    height: 100%;              /* relative to venn height */
+    border-radius: 50%;
+    opacity: 0.5;
+    display: flex;
+    justify-content: center;   /* horizontal text centering */
+    align-items: center;       /* vertical text centering */
+    text-align: center; 
+}
+
+/* left circle */
+.left {
+    background: red;
+    left: 0%;
+    top: 0%;
+}
+
+/* right circle */
+.right {
+    background: blue;
+    left: 30%;
+    top: 0%;
+}
+
+/* labels */
+.label {
+    position: absolute;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    width: 100%
+}
+
+/* label positions (percentage-based) */
+.left-label {
+    left: 15%;
+    top: 50%;
+    text-align: center;
+}
+
+.right-label {
+    left: 85%;
+    top: 50%;
+    text-align: center;
+}
+
+.overlap-label {
+    left: 50%;
+    top: 50%;
+    text-align: center;
+}
