@@ -3,12 +3,12 @@ Requires local server like VScode live server or node.js.
 <br><br><br>
 
 
-**Unfortunately user can only fetch playlists created personally due to Spotify API privacy rules, no blends no top songs no curated**
+**Unfortunately users can only fetch playlists created personally due to Spotify API privacy rules, no blends no top songs no curated**
 <br><br>
 
 Usage: start a local server and run index.html. This will redirect you to a Oauth login page. <br>
 You must login before being able to search playlists
-<br><br><br><br>
+<br><br><br>
 
 Image:
 <img width="2559" height="1326" alt="image" src="https://github.com/user-attachments/assets/cfb850b6-d934-46c8-b02e-b0e5a1adaf57" />
