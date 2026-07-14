@@ -7,7 +7,8 @@
 async function client_credientials() {
 
     const CLIENT_ID = "a8ca54f3da924bcc8bd98dc113959823";
-    const CLIENT_SECRET = "f10141db378f44e1970fb349da9ffdfc"; //supposed to be kept secret / not posted
+    const CLIENT_SECRET = "NULL"; //retrieve from https://developer.spotify.com/dashboard/a8ca54f3da924bcc8bd98dc113959823
+    console.log(`RETRIEVE CLIENT SECRET FROM https://developer.spotify.com/dashboard/a8ca54f3da924bcc8bd98dc113959823`)
 
     const auth_64 = btoa(`${CLIENT_ID}:${CLIENT_SECRET}`)
 
